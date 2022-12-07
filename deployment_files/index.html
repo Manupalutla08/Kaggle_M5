@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+h2 {text-align: center;
+    font-size: 40px}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px
+}
+
+body {
+  background-color: #538aba;
+  background-image: url({{url_for('static', filename='walmart.jpg')}});
+  background-position: center top 25%;
+  background-repeat: no-repeat;
+  background-size: 600px 200px;
+}
+
+.button {
+  background-color: #050808;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  align-items: center;
+  display: inline-block;
+  font-size: 16px;
+  margin-left:32px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.predict {
+  background-color: black; 
+  color: white; 
+  border: 2px solid black;
+}
+
+.predict:hover {
+  background-color: black;
+  color: white
+}
+
+</style>
+</head>
+<body>
+
+<h2 style="color:rgb(2, 2, 11)">Forecast Sales for next 28 days</h2>
+<div class="center">
+<form action="/predict" method="post"><br><br><br><br>
+<input type="text" id="item" name="item" placeholder="ITEM ID" required="required" autocomplete="off"><br><br>
+<input type="text" id="store" name="store" placeholder="STORE ID" required="required" autocomplete="off"><br><br>
+<input button class="button predict" type="submit" value="PREDICT">
+  
+</div>
+</form> 
+</body>
+</html>
